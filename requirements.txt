@@ -1,0 +1,7 @@
+﻿Django==1.10.6
+Markdown==2.6.11
+Pygments==2.2.0
+pip==18.0
+setuptools
+pytz==2018.5
+wheel==0.31.1
