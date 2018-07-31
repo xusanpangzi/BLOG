@@ -1,30 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af66c2c3-e893-48ef-a4d5-16ab595d84b4" name="Default" comment="fourth">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/feeds.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/search_indexes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/myblog/whoosh_cn_backend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search/indexes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search/indexes/myblog/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/search/search.html" afterDir="false" />
+    <list default="true" id="af66c2c3-e893-48ef-a4d5-16ab595d84b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabfile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/templatetags/myblog_tags.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/templatetags/myblog_tags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myblog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/myblog/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/myblog/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myblog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myblog/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myblog/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myblog/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/myblog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/myblog/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -333,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532943545573</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fourth">
+      <created>1533052771634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1533052771634</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
