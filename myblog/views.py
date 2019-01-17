@@ -1,26 +1,29 @@
 from django.shortcuts import render, get_object_or_404
-from . models import Post,Category
-from comments.forms import CommentForm
+from . models import Post,Category,Tag
 import markdown
 from django.views.generic import ListView,DetailView
 from django.utils.text import slugify
 from markdown.extensions.toc import TocExtension
 from django.db.models import Q
+
+def First(request):
+    return render(request,'first.html')
+
 def search(request):
     q=request.GET.get('q')
     error_msg=''
     if not q:
         error_msg="请输入关键词"
-        return render(request,'myblog/index.html',{'error_msg':error_msg})
+        return render(request, 'index.html', {'error_msg':error_msg})
     post_list=Post.objects.filter(Q(title__icontains=q)|Q(body__icontains=q))
-    return render(request,'myblog/index.html',{'error_msg':error_msg,'post_list':post_list})
+    return render(request, 'index.html', {'error_msg':error_msg, 'post_list':post_list})
 # Create your views here.
 def index(request):
     post_list = Post.objects.all()
-    return render(request, 'myblog/index.html', context={'post_list': post_list})
+    return render(request, 'index.html', context={'post_list': post_list})
 class IndexView(ListView):
     model=Post
-    template_name='myblog/index.html'
+    template_name= 'index.html'
     context_object_name='post_list'
     paginate_by=10
     def get_context_data(self, **kwargs):
@@ -88,17 +91,8 @@ def detail(request, pk):
                                       'markdown.extensions.codehilite',
                                       'markdown.extensions.toc',
                                   ])
-    # 记得在顶部导入 CommentForm
-    form = CommentForm()
-    # 获取这篇 post 下的全部评论
-    comment_list = post.comment_set.all()
 
-    # 将文章、表单、以及文章下的评论列表作为模板变量传给 detail.html 模板，以便渲染相应数据。
-    context = {'post': post,
-               'form': form,
-               'comment_list': comment_list
-               }
-    return render(request, 'myblog/detail.html', context=context)
+    return render(request, 'myblog/detail.html')
 
 
 # 记得在顶部导入 DetailView
@@ -134,26 +128,16 @@ class PostDetailView(DetailView):
         post.toc = md.toc
         return post
 
-    def get_context_data(self, **kwargs):
-        # 覆写 get_context_data 的目的是因为除了将 post 传递给模板外（DetailView 已经帮我们完成），
-        # 还要把评论表单、post 下的评论列表传递给模板。
-        context = super(PostDetailView, self).get_context_data(**kwargs)
-        form = CommentForm()
-        comment_list = self.object.comment_set.all()
-        context.update({
-            'form': form,
-            'comment_list': comment_list
-        })
-        return context
+
 def archives(request,year,month):
     post_list = Post.objects.filter(created_time__year=year,
                                     created_time__month=month
                                     )
-    return render(request,'myblog/index.html',context={'post_list':post_list})
+    return render(request, 'index.html', context={'post_list':post_list})
 
 class ArchivesView(ListView):
     model = Post
-    template_name = 'myblog/index.html'
+    template_name = 'index.html'
     context_object_name = 'post_list'
     def get_queryset(self):
         year = self.kwargs.get('year')
@@ -166,11 +150,11 @@ class ArchivesView(ListView):
 def category(request, pk):
     cate = get_object_or_404(Category, pk=pk)
     post_list = Post.objects.filter(category=cate)
-    return render(request, 'myblog/index.html', context={'post_list': post_list})
+    return render(request, 'index.html', context={'post_list': post_list})
 
 class CategoryView(ListView):
     model = Post
-    template_name = 'myblog/index.html'
+    template_name = 'index.html'
     context_object_name = 'post_list'
     def get_queryset(self):
         cate=get_object_or_404(Category,pk=self.kwargs.get('pk'))
@@ -180,9 +164,15 @@ class CategoryView(ListView):
 
 class TagView(ListView):
     model=Post
-    template_name='myblog/index.html'
+    template_name= 'index.html'
     context_object_name='post_list'
     def get_queryset(self):
         tag=get_object_or_404(Tag,pk=self.kwargs.get('pk'))
         return super(TagView,self).get_queryset().filter(tags=tag)
+
+def about(request):
+    return render(request,'myblog/about.html')
+def talking(request):
+    return render(request,'myblog/talking.html')
+
 

@@ -1,8 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.six import python_2_unicode_compatible
 import markdown
+from Blog import settings
 from django.utils.html import strip_tags
 
 # Create your models here.
@@ -25,7 +25,7 @@ class Post(models.Model):
     excerpt = models.CharField(max_length=200,blank=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag,blank=True)
-    author = models.ForeignKey(User,on_delete=models.CASCADE)
+    author = models.CharField(max_length=50)
     views = models.PositiveIntegerField(default=0)
 
 

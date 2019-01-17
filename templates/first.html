@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>三胖子</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+  <link rel="stylesheet" href="{% static 'first/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'first/css/bootstrap.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'first/css/demo.css' %}">
+  <link rel="stylesheet" href="{% static 'first/css/templatemo-style.css' %}">
+
+  <script type="text/javascript" src="{% static 'first/js/modernizr.custom.86080.js' %}"></script>
+
+	</head>
+
+	<body>
+
+			<div id="particles-js"></div>
+            <ul class="cb-slideshow">
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	        </ul>
+
+
+			<div class="container-fluid">
+				<div class="row cb-slideshow-text-container ">
+					<div class= "tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
+					<header class="mb-5"><h1>三胖子</h1></header>
+					<P class="mb-5">欢迎来到我的小世界，这里记录我的生活，我的学习。</P>
+
+
+               	    	<div class="row form-section">
+
+							<div class="col-md-5 col-sm-5 col-xs-5">
+                                <a href="{% url 'myblog:index' %}"><button type="submit" class="tm-btn-subscribe">了解一下</button></a>
+							</div>
+
+					</div>
+				</div>
+
+	</body>
+
+	<script type="text/javascript" src="{% static 'first/js/particles.js' %}"></script>
+	<script type="text/javascript" src="{% static 'first/js/app.js' %}"></script>
+</html>

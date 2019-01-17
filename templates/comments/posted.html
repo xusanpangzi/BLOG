@@ -1,0 +1,9 @@
+﻿{% extends "comments/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "提交成功" %}.{% endblock %}
+
+{% block content %}
+  <h1>{% trans "谢谢你的评论，我会尽快回复。啾咪" %}</h1>
+    <button><a href="javascript:" onclick="self.location=document.referrer;">返回</a></button>
+{% endblock %}

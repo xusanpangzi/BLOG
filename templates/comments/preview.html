@@ -1,0 +1,39 @@
+﻿{% extends "comments/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "有问题" %}{% endblock %}
+
+{% block content %}
+  {% load comments %}
+  <form action="{% comment_form_target %}" method="post">{% csrf_token %}
+    {% if next %}
+      <div><input type="hidden" name="next" value="{{ next }}"/></div>{% endif %}
+    {% if form.errors %}
+      <h1>大兄弟，有错误，改改啊</h1>
+    {% else %}
+      <h1>{% trans "Preview your comment" %}</h1>
+      <blockquote>{{ comment|linebreaks }}</blockquote>
+      <p>
+        {% trans "and" %} <input id="submit" type="submit" name="submit" class="submit-post"
+                                 value="{% trans "Post your comment" %}"/>
+        {# Translators: This string follows the 'Post your comment' submit button. #}
+        {% trans "or make changes" %}:
+      </p>
+    {% endif %}
+    {% for field in form %}
+      {% if field.is_hidden %}
+        <div>{{ field }}</div>
+      {% else %}
+        {% if field.errors %}{{ field.errors }}{% endif %}
+        <p
+                {% if field.errors %} class="error"{% endif %}
+                {% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
+          {{ field.label_tag }} {{ field }}
+        </p>
+      {% endif %}
+    {% endfor %}
+    <p class="submit">
+      <input type="submit" name="submit" class="submit-post" value="{% trans "提交" %}"/>
+    </p>
+  </form>
+{% endblock %}
