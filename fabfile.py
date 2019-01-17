@@ -3,10 +3,10 @@ from fabric.operations import sudo
 
 GIT_REPO = "https://github.com/xusanpangzi/Blog.git"
 
-env.user = 'sanpangzi'
-env.password = 'xuyameng32386964'
+env.user = '用户名'
+env.password = '密码'
 
-env.hosts = ['三胖子.xyz']
+env.hosts = ['域名']
 
 env.port = '27681'
 
